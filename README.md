@@ -1,7 +1,7 @@
 # Introduction
 This is the support site for the Japanese book "Understanding Time Series Analysis with R" (Gijutsu Hyoron publishing, 2018).
 
-The code and data used in the book are published.
+All the code and data used in the book are published.
 
 # Code
 ## Code for R
