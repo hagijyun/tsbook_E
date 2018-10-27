@@ -1,0 +1,19 @@
+# modelH-1.biips
+# Model: specification (local level model with known parameters)
+
+var x[t_max+1],   # State (+1 considering prior distribution)
+    y[t_max+1]    # Observations (+1 for dummy corresponding to prior distribution)
+
+model{
+  # State equation
+  x[1] ~ dnorm(m0, 1/C0)
+  for (t in 2:(t_max+1)){
+    x[t] ~ dnorm(x[t-1], 1/W)
+  }
+
+  # Observation equation
+  # y[1] as dummy
+  for (t in 2:(t_max+1)){
+    y[t] ~ dnorm(x[t], 1/V)
+  }
+}
